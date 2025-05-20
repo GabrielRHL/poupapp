@@ -1,18 +1,5 @@
 import styled from "styled-components";
 
-export const ModalOverlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(245, 245, 245, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: auto;
-`;
-
 export const ModalContainer = styled.dialog`
   background-color: var(--cor-neutra-dark);
   border-radius: var(--border-radius-s);
