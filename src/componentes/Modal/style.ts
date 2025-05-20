@@ -9,6 +9,10 @@ export const ModalContainer = styled.dialog`
   color: var(--cor-neutra-light);
   position: relative;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+
+  &::backdrop {
+    background-color: rgba(235, 235, 235, 0.5);
+  }
 `;
 
 export const ModalHeader = styled.div`
