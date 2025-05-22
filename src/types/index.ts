@@ -1,7 +1,7 @@
 export interface IUsuario {
     id: number;
     nome: string;
-    renda: string
+    renda: number
 }
 
 export interface ITransacoes {
