@@ -2,7 +2,7 @@ import axios from 'axios'
 import { ITransacoes, IUsuario } from '../types'
 
 const api = axios.create ({
-    baseURL: 'https://localhost:5000'
+    baseURL: 'http://localhost:3000'
 })
 
 export const obterUsuario = async (): Promise<IUsuario[]> => {
