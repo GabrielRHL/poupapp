@@ -29,7 +29,10 @@ export const obterTransacoes = async (): Promise<ITransacoes[]> => {
     return data
 }
 
-export const criarTransacoes = async (transacao: Omit<ITransacoes, 'id'>, usuario: Omit<IUsuario, 'nome'>): Promise<ITransacoes> => {
+export const criarTransacoes = async (
+    transacao: Omit<ITransacoes, 'id' | 'userID'>, 
+    usuario: Omit<IUsuario, 'nome'>
+    ): Promise<{transacao: ITransacoes, novoOrcamentoDiario: number}> => {
     const transacoesComID = {...transacao, userID: usuario.id}
     const { data } = await api.post<ITransacoes>('/transacoes', transacoesComID)
     const transacoes = await obterTransacoes()
@@ -39,7 +42,7 @@ export const criarTransacoes = async (transacao: Omit<ITransacoes, 'id'>, usuari
     await atualizarUsuario(usuario.id, {
         orcamentoDiario: novoOrcamentoDiario
     }).catch((error)=>console.error(error))
-    return data
+    return {transacao: data, novoOrcamentoDiario}
 }
 
 const calcularSaldo = (transacoes: ITransacoes[]): number => {
