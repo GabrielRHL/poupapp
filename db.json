@@ -1,4 +1,21 @@
 {
-  "usuarios": [],
-  "transacoes": []
+  "usuarios": [
+    {
+      "id": "f780",
+      "nome": "Gabriel Rocha",
+      "renda": "5000",
+      "orcamentoDiario": 206.66666666666666
+    }
+  ],
+  "transacoes": [
+    {
+      "id": "eac9",
+      "nome": "Livro",
+      "valor": 40,
+      "tipo": "receita",
+      "categoria": "Buseta",
+      "data": "2025-05-29",
+      "userID": "f780"
+    }
+  ]
 }
