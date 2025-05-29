@@ -118,7 +118,7 @@ const Transacoes = () => {
                 placeholder="10"
                 value={novaTransacao.valor}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  aoMudar('valor', e.target.value)
+                  aoMudar('valor', parseFloat(e.target.value))
                 }
               />
             </Fieldset>
