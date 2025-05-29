@@ -2,6 +2,7 @@ export interface IUsuario {
     id: number;
     nome: string;
     renda: number
+    orcamentoDiario?: number
 }
 
 export interface ITransacoes {
