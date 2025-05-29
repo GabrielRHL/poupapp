@@ -11,7 +11,16 @@ export const obterUsuario = async (): Promise<IUsuario[]> => {
 }
 
 export const criarUsuario = async (usuario: Omit<IUsuario, 'id'>): Promise<IUsuario> => {
-    const { data } = await api.post<IUsuario>('/usuarios', usuario)
+        const usuarioComOrcamentoDiario = {
+        ...usuario,
+        orcamentoDiario: usuario.renda / 30
+    }
+    const { data } = await api.post<IUsuario>('/usuarios', usuarioComOrcamentoDiario)
+    return data
+}
+
+export const atualizarUsuario = async (id: string, dados: IUsuario): Promise<IUsuario> => {
+    const { data } = await api.patch(`/usuarios/${id}`, dados)
     return data
 }
 
